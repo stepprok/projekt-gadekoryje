@@ -17,6 +17,7 @@ class typKomponentC extends BaseController
     public $typKomponent;
     public $vyrobce;
     public $config;
+    public $data;
 
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
@@ -25,23 +26,16 @@ class typKomponentC extends BaseController
         $this->vyrobce = new Vyrobce();
 
         $this->config = new ConfigCau();
+        $this->data["typKomponent"] = $this->typKomponent->findAll();
     }
 
     public function index()
     {
-        $data = [
-            "typKomponent" => $this->typKomponent->findAll()
-        ];
-
-        echo view('main/kategorie', $data);
+        echo view('main/kategorie', $this->data);
     }
 
     public function edit(){
-        $data = [
-            "typKomponent" => $this->typKomponent->findAll()
-        ];
-
-        view('add/kategorie_edit', $data);
+        echo view('add/edit',  $this->data);
     }
 
     public function add()

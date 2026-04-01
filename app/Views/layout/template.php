@@ -8,7 +8,9 @@
     <title>Velký projekt pro pana učitele Hrdinu</title>
 </head>
 
-<body><br>
+<body>
+    <?= $this->include('layout/navbar'); ?>
+    <br>
     <div class="container">
         <?= $this->renderSection('content'); ?>
     </div>
