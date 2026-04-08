@@ -8,7 +8,7 @@ $autor = "";
 ?>
 <form action="<?= base_url() . 'user/save' ?>" method="post">
   <div class="mb-3 mt-3">
-    <label for="nazev" class="form-label">Násef gadekorŸje:</label>
+    <label for="násef" class="form-label">Násef gadekorŸje:</label>
     <input type="text" class="form-control" placeholder="Násef" name="násef" value="<?= $nazev ?>">
   </div>
   <div class="mb-3">

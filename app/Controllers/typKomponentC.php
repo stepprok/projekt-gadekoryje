@@ -40,10 +40,11 @@ class typKomponentC extends BaseController
 
     public function add()
     {
+
         $data = [
             'typKomponent' => $this->request->getPost('násef'),
             'autor' => $this->request->getPost('autor'),
-            'url' => strtolower($this->request->getPost('násef'))
+            'url' => preg_replace('/[^a-z0-9 ]/', '', iconv('UTF-8', 'ASCII//TRANSLIT', mb_strtolower($this->request->getPost('násef'))))
         ];
 
         $this->typKomponent->save($data);

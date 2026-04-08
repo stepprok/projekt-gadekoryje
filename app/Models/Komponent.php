@@ -12,7 +12,7 @@ class Komponent extends Model
     protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields = ['nazev', 'odkaz', 'id', 'vyrobce_id', 'pic'];
+    protected $allowedFields = ['nazev', 'odkaz', 'id', 'vyrobce_id', 'pic', 'typKomponent_id'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

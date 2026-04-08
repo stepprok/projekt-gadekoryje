@@ -44,6 +44,7 @@ class KomponentC extends BaseController
             "komponent" => $this->typKomponent->join('komponent', 'komponent.typKomponent_id = typkomponent.idKomponent', 'left')->where('typKomponent_id', $id)->paginate($this->config->perPage),
             "vyrobce" => $this->vyrobce->findAll(),
             "vse" => $this->komponent->findAll(),
+            "jednaveczevseho" => $this->komponent->find($id),
             
             "pager" => $this->typKomponent->pager
         ];
@@ -82,6 +83,13 @@ class KomponentC extends BaseController
     public function update($id)
     {
         $volbaItem = $this->request->getPost('itemsD');
+
+        $data = [
+            'typKomponent_id' => $id
+        ];
+
+        $this->komponent->update($volbaItem, $data);
+
         return redirect()->to(base_url());
     }
 }

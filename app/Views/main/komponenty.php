@@ -76,8 +76,8 @@
                     </div>
 
                     <div class="modal-body">
-                        <form method="post" action="<?= base_url() . 'pridatItem/' . $nadpis->idKomponent ?>">
-                            <label for="items">Fiperde zy nošmozd</label>
+                        <form method="post" action="<?= base_url('pridatItem/') . $nadpis->idKomponent; ?>">
+                            <label for="itemsD">Fiperde zy nošmozd</label>
                             <select name="itemsD">
                                 <option value="" class="form-control" disabled selected>---Viperde glygnudým---</option>
                                 <?php foreach ($vse as $row2): ?>
